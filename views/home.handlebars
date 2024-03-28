@@ -1,0 +1,35 @@
+<script src="./js/client.js"></script>
+
+<div class="container">
+
+  <div class="section">
+    <h1>All Pokemon</h1>
+    <div class="add-pokemon">
+      <input type="number" id="dex-number-input" placeholder="Dex #" min="1" max="1010">
+      <button id="add-button">Add New from Pokemon API</button>
+    </div>
+    <div id="error-message" class="error-message"></div>
+    <div class="sprite-container">
+      {{! TODO Display list of Pokemon here. }}
+      {{#each pokemonList}}
+      <button class="pokemon-button" data-dex-number="{{dexNumber}}" data-image-url="{{imageUrl}}">
+        <img src="{{smallImageUrl}}" />
+        <span>{{name}}</span>
+      </button>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="details">
+      <h1>Details</h1>
+      {{! TODO Display info about a single Pokemon here. }}
+      <img src="{{favoritePokemon.imageUrl}}" class="big-image" />
+      <h2 class="dex-number-name">#{{favoritePokemon.dexNumber}}&nbsp;{{favoritePokemon.name}}</h2>
+      <p><strong>Types:&nbsp;</strong><span class="types">{{favoritePokemon.types}}</span></p>
+      <p><strong>About&nbsp;<span class="pokemon-name-about">{{favoritePokemon.name}}:</span></strong>&nbsp;<span
+          class="pokemon-about">{{favoritePokemon.dexEntry}}</span></p>
+    </div>
+  </div>
+
+</div>
